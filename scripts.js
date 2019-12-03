@@ -20,7 +20,7 @@ function updateButton() {
 }
 
 function skip() {
- video.currentTime += parseFloat(this.dataset.skip);
+  video.currentTime += parseFloat(this.dataset.skip);
 }
 
 function handleRangeUpdate() {
@@ -50,6 +50,6 @@ ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
 
 let mousedown = false;
 progress.addEventListener('click', scrub);
-progress.addEventListener('mousemove', (e) => mousedown && scrub(e));
-progress.addEventListener('mousedown', () => mousedown = true);
-progress.addEventListener('mouseup', () => mousedown = false);
+progress.addEventListener('mousemove', e => mousedown && scrub(e));
+progress.addEventListener('mousedown', () => (mousedown = true));
+progress.addEventListener('mouseup', () => (mousedown = false));
